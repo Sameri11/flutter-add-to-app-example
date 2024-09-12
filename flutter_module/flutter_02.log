@@ -1,0 +1,120 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter attach -d emulator-5554
+
+## exception
+
+StateError: Bad state: Stream has already been listened to.
+
+```
+#0      _StreamController._subscribe (dart:async/stream_controller.dart:686:7)
+#1      _ControllerStream._createSubscription (dart:async/stream_controller.dart:837:19)
+#2      _StreamImpl.listen (dart:async/stream_impl.dart:497:9)
+#3      new _ForwardingStreamSubscription (dart:async/stream_pipe.dart:114:10)
+#4      _ForwardingStream._createSubscription (dart:async/stream_pipe.dart:86:16)
+#5      _ForwardingStream.listen (dart:async/stream_pipe.dart:81:12)
+#6      FlutterDevice.connect (package:flutter_tools/src/resident_runner.dart:267:35)
+#7      ResidentRunner.connectToServiceProtocol (package:flutter_tools/src/resident_runner.dart:1404:21)
+#8      HotRunner.attach (package:flutter_tools/src/run_hot.dart:236:13)
+#9      AttachCommand._attachToDevice (package:flutter_tools/src/commands/attach.dart:403:31)
+<asynchronous suspension>
+#10     AttachCommand.runCommand (package:flutter_tools/src/commands/attach.dart:265:5)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1408:27)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:420:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+<asynchronous suspension>
+#17     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:130:9)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#19     main (package:flutter_tools/executable.dart:93:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.24.2, on macOS 14.6.1 23G93 darwin-arm64, locale en-RU)
+    [32m•[39m Flutter version 3.24.2 on channel stable at /Users/samer/fvm/versions/stable
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 4cf269e36d (9 days ago), 2024-09-03 14:30:00 -0700
+    [32m•[39m Engine revision a6bd3f1de1
+    [32m•[39m Dart version 3.5.2
+    [32m•[39m DevTools version 2.37.2
+
+[32m[✓][39m Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    [32m•[39m Android SDK at /Users/samer/Library/Android/sdk
+    [32m•[39m Platform android-35, build-tools 34.0.0
+    [32m•[39m Java binary at: /Users/samer/.sdkman/candidates/java/22.0.2-tem/bin/java
+    [32m•[39m Java version OpenJDK Runtime Environment Temurin-22.0.2+9 (build 22.0.2+9)
+    [32m•[39m All Android licenses accepted.
+
+[32m[✓][39m Xcode - develop for iOS and macOS (Xcode 15.4)
+    [32m•[39m Xcode at /Applications/Xcode-15.4.app/Contents/Developer
+    [32m•[39m Build 15F31d
+    [32m•[39m CocoaPods version 1.15.2
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[32m[✓][39m Android Studio (version 2024.1)
+    [32m•[39m Android Studio at /Users/samer/Applications/Android Studio Koala 2024.1.1 Patch 2.app/Contents
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 17.0.11+0-17.0.11b1207.24-11852314)
+
+[33m[!][39m Android Studio (version unknown)
+    [32m•[39m Android Studio at /Users/samer/Applications/Android Studio.app/Contents
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [31m✗[39m Unable to determine Android Studio version.
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
+
+[33m[!][39m Android Studio (version unknown)
+    [32m•[39m Android Studio at /Users/samer/Applications/Android Studio Ladybug Feature Drop 2024.2.2 Canary 1.app/Contents
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [31m✗[39m Unable to determine Android Studio version.
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
+
+[32m[✓][39m IntelliJ IDEA Ultimate Edition (version 2024.2.1)
+    [32m•[39m IntelliJ at /Users/samer/Applications/IntelliJ IDEA Ultimate.app
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin version 242.21829.3
+
+[32m[✓][39m VS Code (version 1.93.0)
+    [32m•[39m VS Code at /Applications/Visual Studio Code.app/Contents
+    [32m•[39m Flutter extension version 3.96.0
+
+[32m[✓][39m Connected device (6 available)
+    [32m•[39m sdk gphone64 arm64 (mobile)        • emulator-5554             • android-arm64  • Android 15 (API 35) (emulator)
+    [32m•[39m Михаил Новосельцев’s iPad (mobile) • 00008110-000A50AE11B9801E • ios            • iOS 17.6.1 21G93
+    [32m•[39m iPhone (Михаил) (mobile)           • 00008020-001254DA1E39002E • ios            • iOS 17.6.1 21G93
+    [32m•[39m macOS (desktop)                    • macos                     • darwin-arm64   • macOS 14.6.1 23G93 darwin-arm64
+    [32m•[39m Mac Designed for iPad (desktop)    • mac-designed-for-ipad     • darwin         • macOS 14.6.1 23G93 darwin-arm64
+    [32m•[39m Chrome (web)                       • chrome                    • web-javascript • Google Chrome 128.0.6613.120
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
