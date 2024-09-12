@@ -44,9 +44,9 @@ class MainActivity : FragmentActivity() {
             .findFragmentByTag(TAG_FLUTTER_FRAGMENT) as FlutterFragment?
 
         if (flutterFragment == null) {
-            var newFlutterFragment = FlutterFragment.NewEngineFragmentBuilder(MyFlutterFragment::class.java)
-                .build<MyFlutterFragment>()
-//            var newFlutterFragment = FlutterFragment.createDefault()
+//            var newFlutterFragment = FlutterFragment.NewEngineFragmentBuilder(MyFlutterFragment::class.java)
+//                .build<MyFlutterFragment>()
+            var newFlutterFragment = FlutterFragment.createDefault()
             flutterFragment = newFlutterFragment
             fragmentManager
                 .beginTransaction()
